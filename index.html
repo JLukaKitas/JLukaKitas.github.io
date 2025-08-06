@@ -12,26 +12,49 @@
       padding: 0;
       text-align: center;
     }
+
     header {
       background-color: #333;
       color: white;
       padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
     }
+
     h1 {
       margin: 0;
     }
+
     nav {
       margin-top: 1rem;
     }
+
     nav a {
       margin: 0 1rem;
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
+
     main {
       padding: 2rem;
     }
+
+    .welcome-section {
+      padding-top: 4rem; /* Extra space for anchor target */
+    }
+
+    .welcome-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .welcome-section p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-top: 0;
+    }
+
     footer {
       background-color: #333;
       color: white;
@@ -47,16 +70,22 @@
   <header>
     <h1>My Personal Website</h1>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="#welcome">Home</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
-    <h2>Hello, and welcome!</h2>
-    <p>This is my personal site hosted with GitHub Pages.</p>
-    <p>I'll be sharing my projects, blog posts, and more here. Stay tuned!</p>
+    <section id="welcome" class="welcome-section">
+      <h2>Welcome</h2>
+      <p>Bienvenue</p>
+    </section>
+
+    <section>
+      <p>This is my personal site hosted with GitHub Pages.</p>
+      <p>I'll be sharing my projects, blog posts, and more here. Stay tuned!</p>
+    </section>
   </main>
 
   <footer>
@@ -64,4 +93,4 @@
   </footer>
 
 </body>
-                                                                            </html>
+</html>
