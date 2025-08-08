@@ -1,97 +1,199 @@
-/* styles.css */
+/* Reset some defaults */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
   margin: 0;
   padding: 0;
+  color: #333;
   text-align: center;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Header with subtle shadow */
 header {
-  background-color: #333;
-  color: white;
+  background-color: #1f2937;
+  color: #f9fafb;
   padding: 1.5rem 0;
+  box-shadow: 0 2px 5px rgba(31, 41, 55, 0.3);
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
-h1 {
+header h1 {
   margin: 0;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1.2px;
 }
 
+/* Navigation */
 nav {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 }
 
 nav a {
-  margin: 0 1rem;
-  color: white;
+  color: #f9fafb;
   text-decoration: none;
-  font-weight: bold;
+  margin: 0 1.25rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
 }
 
-main {
-  padding: 2rem;
+nav a:hover,
+nav a:focus {
+  color: #3b82f6;
 }
 
-.welcome-section {
-  padding-top: 4rem; /* Extra space for anchor target */
-}
-
-.welcome-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.welcome-section p {
-  font-size: 1.2rem;
-  color: #555;
-  margin-top: 0;
-}
-
-footer {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
-  position: fixed;
+nav a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #3b82f6;
+  transition: width 0.3s ease;
+  position: absolute;
   bottom: 0;
+  left: 0;
+}
+
+nav a:hover::after,
+nav a:focus::after {
   width: 100%;
 }
 
-/* About & Contact pages */
+/* Main content */
+main {
+  flex: 1;
+  padding: 3rem 1rem 5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Welcome Section */
+.welcome-section {
+  padding-top: 4rem; /* anchor spacing */
+  margin-bottom: 3rem;
+}
+
+.welcome-section h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+  color: #1e293b;
+  letter-spacing: 2px;
+}
+
+.welcome-section p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-top: 0;
+  font-style: italic;
+}
+
+/* Secondary sections */
+section p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0.8rem auto;
+  color: #475569;
+}
+
+/* Footer */
+footer {
+  background-color: #1f2937;
+  color: #cbd5e1;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 5px rgba(31, 41, 55, 0.3);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* About & Contact pages body styling */
 .about-contact-body {
-  background-color: #fefefe;
-  padding: 2rem;
-  margin: 0;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  color: #334155;
+  min-height: 100vh;
+  padding: 4rem 1rem 6rem;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* Headings */
 .about-contact-body h1 {
+  font-weight: 700;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
+  color: #1e293b;
+  letter-spacing: 1.5px;
 }
 
+/* Paragraphs */
 .about-contact-body p {
-  font-size: 1.1rem;
-  color: #444;
+  font-size: 1.2rem;
+  color: #475569;
+  margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
+/* Links */
 .about-contact-body a {
+  color: #3b82f6;
+  font-weight: 600;
   text-decoration: none;
-  color: #0066cc;
-  display: inline-block;
-  margin-top: 1rem;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.3s ease;
 }
 
-.about-contact-body .contact-info {
-  margin-top: 2rem;
+.about-contact-body a:hover,
+.about-contact-body a:focus {
+  border-color: #3b82f6;
 }
 
-.about-contact-body .contact-info a {
-  display: block;
-  margin: 0.5rem 0;
+/* Contact info block */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.25rem;
 }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  nav a {
+    margin: 0 0.7rem;
+    font-size: 1rem;
+  }
+
+  .welcome-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .welcome-section p {
+    font-size: 1.1rem;
+  }
+
+  main {
+    padding: 2rem 1rem 4rem;
+  }
 }
